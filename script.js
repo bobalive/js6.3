@@ -25,36 +25,36 @@ function clock() {
 
 clock();
 
-function toggle(arr, content){
+// function toggle(arr, content){
     
-    arr.forEach(item =>{
-        item.addEventListener('click', () =>{
-            arr.forEach(item =>{
-            item.classList.remove('active')
-            })
-            // var a = arr[0].className.split(' ') ;
-            // if(a[1] ==''){
+//     arr.forEach(item =>{
+//         item.addEventListener('click', () =>{
+//             arr.forEach(item =>{
+//             item.classList.remove('active')
+//             })
+//             var a = arr[0].className.split(' ') ;
+            // if(a[1] ===''){
             //     content.forEach(cont => {
             //         cont[0].classList.remove('active');
             //         cont[1].classList.add('active');
             //     })
-            // }if(a[1] == 'active'){
+            // }if(a[1] === 'active'){
             //     content.forEach(cont => {
             //         cont[0].classList.remove('active');
             //         cont[1].classList.add('active');
             //     })
             // }        
-            content.forEach(cont => {
-                cont.classList.toggle('active')
-            })
-            item.classList.toggle('active')
+//             content.forEach(cont => {
+//                 cont.classList.toggle('active')
+//             })
+//             item.classList.toggle('active')
             
-        })
-    })
-}
+//         })
+//     })
+// }
 
 
-toggle(tabItem, tabContent)
+// toggle(tabItem, tabContent)
 
     // a =tabItem[0].className.split(' ');
     // if(a[1] ===''){
@@ -66,4 +66,20 @@ toggle(tabItem, tabContent)
     //     tabContent[0].classList.add('active');
     //     tabContent[1].classList.remove('active');
     // }
+
+function toggle (arr, cont){
+    arr[1].addEventListener('click' , ()=>{
+        arr[1].classList.add('active')
+        arr[0].classList.remove('active')
+        cont[1].classList.add('active')
+        cont[0].classList.remove('active')
+    })
+    arr[0].addEventListener('click' , ()=>{
+        arr[0].classList.add('active')
+        arr[1].classList.remove('active')
+        cont[0].classList.add('active')
+        cont[1].classList.remove('active')
+    })
+}
+toggle(tabItem, tabContent)
 
